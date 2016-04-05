@@ -27,14 +27,14 @@ for user `ace` and salt `8593018378`.
 
 ## Part B: Encryption
 
-Another colleague decided to build a symmetric encryption scheme. These are implemented in `badencrypt.py` and `baddecrypt.py` and are designed to encrypt a sample message to demonstrate the encryption scheme. To use this demonstationg software, run:
+Another colleague decided to build a symmetric encryption scheme. These are implemented in `badencrypt.py` and `baddecrypt.py` and are designed to encrypt a sample message to demonstrate the encryption scheme. To use these demo programs, run:
 ```
 CT=$(python badencrypt.py testkeyfile)
 echo $CT
 python baddecrypt.py testkeyfile $CT
 ```
 
-Your job is to assess the security of this encryption scheme. Your solution will be a Python program `attack.py` that takes as input a ciphertext and modifies the ciphertext so that the decrypted message has a different (and more lucrative) `AMOUNT` field and still passes the verification in `baddecrypt.py`. `attack.py` must do this without access to the keyfile or knowledge of the key. You can assume the ciphertext contains the sample message hardcoded in `badencrypt.py`.
+Your job is to assess the security of this encryption scheme. Your solution will be a Python program `attack.py` that takes as input a ciphertext and modifies the ciphertext so that the decrypted message has a different (and more lucrative to the recipient) `AMOUNT` field and still passes the verification in `baddecrypt.py`. `attack.py` must do this without access to the keyfile or knowledge of the key. You can assume the ciphertext contains the sample message hardcoded in `badencrypt.py`.
 
 We will test your solution with original versions of `badencrypt.py` and `baddecrypt.py` and with different encryption keys than the test key provided. To ensure that `attack.py` produces the correct formatted output, you can run from the command line:
 ```
@@ -47,3 +47,19 @@ In `solutions.txt`, describe what is wrong with your colleague's scheme and how 
 
 Your attack script will not have direct access to the key file and should not attempt to gain access to the process memory of baddecrypt or any other files to steal the key directly.
 
+## Deliverables
+Put the files `attack.py` and `solutions.txt` into a tarball with the following command (where UWID1/2 are your group members' UWID #s):
+```
+tar -cf UWID1_UWID2_hw3.tar attack.py solutions.txt
+```
+
+Upload `UWID1_UWID2_hw3.tar` to the hw-3 folder on the Desire2Learn website for this course:
+https://uwmad.courses.wisconsin.edu/d2l/home/3199130
+
+Use Assignments > Dropbox to find the hw-3 submission folder.
+
+## Grading
+Each part is worth up to 5 points for a total of 10 points for this assignment.
+
+## Collaboration Policy
+You are encouraged to use the internet, the Piazza discussion board for this class, and classmates for information about tools and setup. Please help your fellow classmates with setup and understanding Python, but don't discuss solution specifics with anyone beyond your project partner.

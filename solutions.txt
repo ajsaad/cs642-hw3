@@ -1,4 +1,8 @@
+# Team members: UW ID #s and names - there is no special format for this.
+
 # Part A:
+
+## Recovered password
 
 ## Pseudocode for attack
 
