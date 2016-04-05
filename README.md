@@ -6,15 +6,18 @@ It is due **April 28, 2016** by 11:59 PM local time.
 
 ## Part A: Password Cracking
 
-A colleague has built a password hashing mechanism. It applies SHA-256 to a string of the form 'username,password,salt' where 'salt' is a randomly chosen value. For example, the stored value for username 'user' and password '12345' and salt '999999' is 'c50603be4fedef7a260ef9181a605c27d44fe0f37b3a8c7e8dbe63b9515b8e96'.
+A colleague has built a password hashing mechanism. It applies SHA-256 to a string of the form `username,password,salt` where `salt` is a randomly chosen value. For example, the stored value for username `user` and password `12345` and salt `999999` is 
+`c50603be4fedef7a260ef9181a605c27d44fe0f37b3a8c7e8dbe63b9515b8e96`.
 
 For example, the Python code to generate this is:
-'''
+```
 import hashlib;
 print hashlib.sha256("user,12345,999999").hexdigest();
-'''
+```
 
-The same process was used to generate the challenge hash '83c02558e533b6051e6d40e84bd03d19193b7090fa016b9b247f86d129d5f608' for user 'ace' and salt '8593018378'.
+The same process was used to generate the challenge hash 
+`83c02558e533b6051e6d40e84bd03d19193b7090fa016b9b247f86d129d5f608` 
+for user `ace` and salt `8593018378`.
 
 * Recover the password used to generate the challenge hash above. *Hint:* The password consists only of numbers.
 * Give a pseudocode description of your algorithm and the worst case running time for it.
