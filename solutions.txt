@@ -1,15 +1,44 @@
 # Team members: UW ID #s and names - there is no special format for this.
+  9064978704 Saad, Alexander
+  9065835267 Elizondo, Aaron
+
 
 # Part A:
 
 ## Recovered password
+  The recovered password is 307049632
 
 ## Pseudocode for attack
+  Essentially we have a string called challengeHash that is the hashed "user,password,salt" string. Then, since we are
+  given the hint that the password only contains numbers we created a basic for loop using the variable 'i' from
+  0 to some large max value. In each iteration of the loop we concatenate "user,i,salt" (where user and salt have
+  been given), hash it with SHA-256, then compare this new hashed value to our challengeHash value. This repeats until
+  the new hashed value matches the challengeHash, at which point we know that the value of 'i' at that iteration
+  is the password.
+  
+  It would look something like this:
+    
+    challengeHash = "given hash using given username and salt"
+    for i in range(0, infinity):
+      string = "ace,+str(i)+"8593018378"
+      tempHash = hashlib.sha256(string).hexdigest()
+      
+      if tempHash == challengeHash
+        return i
 
 ## Worst case running time
+  The worst case running time for this algorithm is O(N) because you will execute the loop N times (equal to the value
+  of i).
 
 ## Discussion of current proposal and suggestions for improvement
-
+  The simplest way to improve this password hasing mechanism would simply be to add other characters (letters and
+  symbols) in addition to using numbers in order to make brute forcing the password more difficult.
+  
+  Another possible way to make this intractable would be to use a Password-Based Key Derivation Function, which would
+  essentially run our hashing function thousands of times.
+  
+  Both of these approaches would make brute forcing the password far more diffcult because a significantly large
+  magnitude of work would need to be carried out.
 
 # Part B:
 
