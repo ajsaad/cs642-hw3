@@ -43,6 +43,17 @@
 # Part B:
 
 ## Discussion of the current scheme
+  The current encryption scheme is symmetric encryption that opens up the keyfile to get the key used for encryption.
+  It uses the cipher block chaing AES method with a 16 initialization vector which is also added onto the front of the
+  ciphertext. A tag is then created from the underlying message to be used as authentication in the decryption.
+  
+  The decryption then simply breaks up the cipher text into the components of IV, text, and tag. It is decrypted by removing
+  the tag from the end of the ciphertext. Once the plain text is available it is immediately hashed to compare to the tag to check
+  that the message hasn't been tampered with.
+    
 
 ## Suggestions for improving the scheme
+  Add an additional hash to the tag in order to make it more difficult to authenticate, knowing the cipher and the message is enough
+  information to be able to alter the intialization vector accurately to a point where you can change the plaintext without needing
+  the key. Making it harder to authenticate the tag would result in more work being required to alter the cipher text.
 
